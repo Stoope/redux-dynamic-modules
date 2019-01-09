@@ -38,6 +38,8 @@ export function getSagaExtension<C>(
     return {
         middleware: [sagaMiddleware],
 
+        tasks: _sagaManager.tasks,
+
         onModuleManagerCreated: (moduleManager: IModuleManager) => {
             if (sagaContext) {
                 sagaContext["moduleManager"] = moduleManager;

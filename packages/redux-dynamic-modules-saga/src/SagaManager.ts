@@ -12,6 +12,7 @@ export function getSagaManager(
     const tasks = getMap<ISagaRegistration<any>, Task>(sagaEquals);
 
     return {
+        tasks,
         getItems: (): ISagaRegistration<any>[] => [...tasks.keys],
         add: (sagas: ISagaRegistration<any>[]) => {
             if (!sagas) {
